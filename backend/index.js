@@ -1,14 +1,30 @@
-import express from 'express';
-import cors from 'cors';
-import connectDB from './config/db.js';
-import routes from './routes/routes.js'; 
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import connectDB from "./config/db.js";
+import contactRoutes from "./routes/contactRoutes.js";
 
+dotenv.config();
 const app = express();
+
 connectDB();
 
-app.use(cors());
-app.use(express.json());
-app.use('/api', routes);
+// CORS setup
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",            // dev (Vite)
+      "https://your-frontend.netlify.app" // production frontend
+    ],
+    methods: ["GET", "POST"],
+  })
+);
 
-const PORT = process.env.PORT || 10000;
-app.listen(PORT, () => console.log(`Portfolio Backend is running on port: ${PORT}`));
+app.use(express.json());
+
+app.use("/api/contacts", contactRoutes);
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () =>
+  console.log(`🚀 Portfolio Backend running on port: ${PORT}`)
+);
