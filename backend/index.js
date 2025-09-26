@@ -1,3 +1,4 @@
+
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -6,22 +7,40 @@ import contactRoutes from "./routes/contactRoutes.js";
 
 dotenv.config();
 const app = express();
-
 connectDB();
 
-// CORS setup
+
+const allowedOrigins = (process.env.ALLOWED_ORIGINS || "")
+  .split(",")
+  .map((s) => s.trim())
+  .filter(Boolean);
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",            // dev (Vite)
-      "https://your-frontend.netlify.app" // production frontend
-    ],
-    methods: ["GET", "POST"],
+    origin: function (origin, callback) {
+      
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.length === 0) {
+        
+        return callback(new Error("CORS: No allowed origins configured"), false);
+      }
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("CORS: Origin not allowed"), false);
+      }
+    },
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
   })
 );
 
-app.use(express.json());
 
+app.options("*", cors());
+
+app.use(express.json());
 app.use("/api/contacts", contactRoutes);
 
 const PORT = process.env.PORT || 5000;
