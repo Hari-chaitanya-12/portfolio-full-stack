@@ -1,5 +1,5 @@
 import React from 'react'
-
+import linkedin from '../assets/linkedin.png'
 const Navbar = () => {
   return (
     <div>
@@ -15,7 +15,7 @@ const Navbar = () => {
             <a href="#contact">Contact</a>
             
             <a href="mailto:harichaitanya47@gmail.com"><img src="https://uxwing.com/wp-content/themes/uxwing/download/communication-chat-call/email-envelope-line-white-icon.png" alt="mail" /></a>
-            <a href="https://www.linkedin.com/in/hari-chaitanya-328a69250"><img src="./src/assets/linkedin.png" alt="linkedin" /></a>
+            <a href="https://www.linkedin.com/in/hari-chaitanya-328a69250"><img src={linkedin} alt="linkedin" /></a>
             
           </div>
         </nav>

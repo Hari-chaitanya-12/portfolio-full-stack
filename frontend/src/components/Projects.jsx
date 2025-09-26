@@ -1,4 +1,10 @@
 import React from 'react'
+import todoImg from "../assets/todo.png";
+import ecommerceImg from "../assets/ecommers.png";
+import videoCallImg from "../assets/video-call-app.png";
+import llmImg from "../assets/LLM.png";
+import searchImg from "../assets/search-engine.png";
+import weatherImg from "../assets/weather-app.png";
 
 const Projects = () => {
   return (
@@ -12,7 +18,7 @@ const Projects = () => {
 
                         <div className="carousel-item active">
                             <div className="container">
-                                <img src="./src/assets/todo.png"  alt="To-Do App"  />
+                                <img src={todoImg}  alt="To-Do App"  />
                                 <h6>To-Do App</h6>
                                 <p className="small text-white-50 text-center">A simple and intuitive to-do list application
                                     built with React. It allows users to add, edit, and delete tasks, helping them stay
@@ -27,7 +33,7 @@ const Projects = () => {
 
                         <div className="carousel-item">
                             <div className="container">
-                                <img src="./src/assets/ecommers.png"  alt="E-commerce Website"/>
+                                <img src={ecommerceImg}  alt="E-commerce Website"/>
                                 <h6>E-commerce Website</h6>
                                 <p className="small text-white-50 text-center">A fully functional e-commerce website
                                     developed
@@ -45,7 +51,7 @@ const Projects = () => {
 
                         <div className="carousel-item">
                             <div className="container">
-                                <img src="./src/assets/video-call-app.png" alt="Video Call App"/>
+                                <img src={videoCallImg} alt="Video Call App"/>
                                 <h6>Video Call App</h6>
                                 <p className="small text-white-50 text-center">A real-time video calling application built
                                     with
@@ -64,7 +70,7 @@ const Projects = () => {
 
                         <div className="carousel-item">
                             <div className="container">
-                                <img src="./src/assets/LLM.png"  alt="LLM" />
+                                <img src={llmImg}  alt="LLM" />
                                 <h6>LLM</h6>
                                 <p className="small text-white-50 text-center">A web application that integrates with large
                                     language models (LLMs) to provide users with advanced text generation and natural
@@ -81,7 +87,7 @@ const Projects = () => {
 
                         <div className="carousel-item">
                             <div className="container">
-                                <img src="./src/assets/search-engine.png"  alt="Search Engine"/>
+                                <img src={searchImg}  alt="Search Engine"/>
                                 <h6>Search Engine</h6>
                                 <p className="small text-white-50 text-center">A custom search engine developed using Google
                                     Api, React and Node.js that allows users to search for information across multiple
@@ -98,7 +104,7 @@ const Projects = () => {
 
                         <div className="carousel-item">
                             <div className="container">
-                                <img src="./src/assets/weather-app.png"  alt="Weather App" />
+                                <img src={weatherImg}  alt="Weather App" />
                                 <h6>Weather App</h6>
                                 <p className="small text-white-50 text-center">A weather forecasting application built with
                                     Open

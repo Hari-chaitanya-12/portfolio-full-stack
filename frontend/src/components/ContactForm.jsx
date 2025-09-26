@@ -5,7 +5,7 @@ const ContactForm = () => {
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Get API URL from .env (fallback to localhost for dev)
+  
   const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
   const handleChange = (e) => {

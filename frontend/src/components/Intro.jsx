@@ -1,5 +1,5 @@
 import React from 'react'
-
+import profilePic from '../assets/pp.jpg'
 const Intro = () => {
   return (
     <div>
@@ -11,7 +11,7 @@ const Intro = () => {
                     and Node.js, and I’m always exploring ways to turn ideas into clean, functional websites.</p>
             </div>
             <div className="right-side"> 
-                <img src="./src/assets/pp.jpg" alt="profile picture" height={300} width={250} /> 
+                <img src={profilePic} alt="profile picture" height={300} width={250} /> 
             </div>
         </section>
     </div>
